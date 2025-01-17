@@ -1,4 +1,6 @@
 from django.shortcuts import render, HttpResponse
+from pickle import load
+model = load('.\SaveModels\tf.pkl')
 
 # Create your views here.
 def index(request):
@@ -10,3 +12,6 @@ def about(request):
 
 def services(request):
     return HttpResponse("this is service page")
+
+def predict(request):
+    return render(request, 'index.html')
