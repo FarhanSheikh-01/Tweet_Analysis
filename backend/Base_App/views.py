@@ -1,17 +1,18 @@
-from django.shortcuts import render, HttpResponse
-from pickle import load
-model = load('.\SaveModels\tf.pkl')
-
-# Create your views here.
-def index(request):
-    return render(request, "index.html")
-    # return HttpResponse("this is home page")
-
-def about(request):
-    return HttpResponse("this is about page")
-
-def services(request):
-    return HttpResponse("this is service page")
+# Base_App/views.py
+from django.shortcuts import render
+from django.apps import apps
 
 def predict(request):
     return render(request, 'index.html')
+
+def msg(request):
+    if request.method == "POST":
+        text = request.POST.get("text", "")
+        if text:
+            app_config = apps.get_app_config('base_app')  
+            transformed_text = app_config.vector.transform([text])
+            prediction = app_config.model.predict(transformed_text)
+            return render(request, 'index.html', {"prediction": prediction[0]})
+        else:
+            return render(request, 'index.html', {"error": "No text provided."})
+    return render(request, 'index.html', {"error": "Invalid request method."})

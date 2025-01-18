@@ -1,0 +1,1 @@
+default_app_config = 'Base_App.apps.BaseAppConfig'

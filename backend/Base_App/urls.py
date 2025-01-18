@@ -1,9 +1,7 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include('backend\urls.py')),
-    path("about", include('backend\urls.py')),
-    path("services", include('backend\urls.py')),
+    path('', views.predict, name='predict'),
+    path('msg/', views.msg, name='msg'),
 ]
