@@ -1,88 +1,111 @@
-/* General styling for body */
+/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #000000;  /* Black background */
+    color: #fff;  /* White text color */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+    display: flex;
+    justify-content: center;  /* Center the content horizontally */
+    align-items: center;  /* Center the content vertically */
+    height: 100vh;  /* Make the body fill the entire viewport height */
 }
 
-/* Center the main container */
+/* Container Styling */
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    background: #ffffff;
-    padding: 20px;
+    background-color: #ffffff;  /* White background for the container */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 50%;  /* Reduced width by 50% */
+    font-size: 1rem;
+    width: 100%;  /* Ensure the container takes 100% of its parent's width, while max-width restricts it */
 }
 
-/* Header styling */
+/* Heading Styling */
 h1 {
+    font-size: 2rem;
+    color: #4a4a4a;  /* Dark grey heading */
     text-align: center;
     margin-bottom: 20px;
-    color: #007bff;
+    font-weight: 600;
 }
 
-/* Form styling */
-.form-floating {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-textarea.form-control {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid #ced4da;
-    padding: 10px;
-    resize: none;
-    height: 120px;
-}
-
-textarea:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-label {
-    position: absolute;
-    top: 10px;
-    left: 12px;
-    font-size: 14px;
-    color: #6c757d;
-}
-
-/* Submit button styling */
-.btn-primary {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-/* Output area */
-#output {
-    text-align: center;
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;  /* Stack form elements vertically */
+    align-items: stretch;  /* Ensure form elements stretch to full width */
     margin-top: 20px;
 }
 
-#result {
-    display: inline-block;
-    padding: 10px 20px;
+.form-floating {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-floating textarea {
+    font-size: 1rem;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #e9ecef;
-    font-size: 18px;
-    color: #495057;
-    border: 1px solid #ced4da;
+    padding: 14px;
+    width: 100%;
+    height: 140px;
+    resize: none;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus effect on textarea */
+.form-floating textarea:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 8px rgba(108, 117, 125, 0.2);
+    outline: none;
+}
+
+/* Label Styling */
+.form-floating label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 500;
+}
+
+/* Button Styling */
+button {
+    background-color: #6c757d;  /* Subtle grey button */
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1rem;
+    border-radius: 30px;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Hover effect on button */
+button:hover {
+    background-color: #5a6268;  /* Darker grey on hover */
+}
+
+/* Output Styling */
+#output {
+    background-color: #f8f9fa;  /* Very light grey background */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1rem;
+    color: #6c757d;  /* Subtle grey text */
+}
+
+/* Result message styling */
+#msg {
+    font-weight: 500;
+    color: #6c757d;  /* Slightly darker grey for result */
+    font-size: 1.1rem;
+    margin-top: 10px;
 }

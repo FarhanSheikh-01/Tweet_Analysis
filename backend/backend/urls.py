@@ -4,6 +4,5 @@ from django.urls import path
 from Base_App import views
 
 urlpatterns = [
-    path("", views.predict, name='predict'),
-    path("msg/", views.msg, name='msg'),
+    path("", views.msg, name='msg'),
 ]

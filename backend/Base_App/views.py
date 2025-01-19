@@ -2,9 +2,6 @@
 from django.shortcuts import render
 from django.apps import apps
 
-def predict(request):
-    return render(request, 'index.html')
-
 def msg(request):
     if request.method == "POST":
         text = request.POST.get("text", "")
