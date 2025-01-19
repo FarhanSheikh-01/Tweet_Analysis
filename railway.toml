@@ -1,0 +1,16 @@
+# railway.toml
+
+[build]
+# Specify the builder to use for deployment
+builder = "NIXPACKS"
+
+[deploy]
+# Command to start the application
+start = "gunicorn backend.wsgi:application"
+
+# Environment variables
+[env]
+DJANGO_SECRET_KEY = "django-insecure-+^2frv2ci@+b!99p-75a^i2cvebcr0auvea)_g4rx-^uu78@5$"
+DJANGO_DEBUG = "False"
+DJANGO_ALLOWED_HOSTS = "Tweet_Analysis.com"
+DATABASE_URL = "your-database-url"
